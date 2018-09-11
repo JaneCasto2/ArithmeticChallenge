@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Arithmetic Challenge</string>
+    <string name="greeting">Hello World!</string>
+    <string name="title">Back to Kindergarten</string>
+    <string name="subtitle">Choose your Mode!</string>
+    <string name="instructions">HOW TO PLAY</string>
+</resources>
