@@ -13,9 +13,7 @@
     <string name="op1">10</string>
     <string name="op2">16</string>
     <string name="op3">6</string>
-    <string name="num1">8</string>
-    <string name="num2">2</string>
-    <string name="operator">*</string>
+    <string name="question">8 * 2</string>
 
 
 </resources>
