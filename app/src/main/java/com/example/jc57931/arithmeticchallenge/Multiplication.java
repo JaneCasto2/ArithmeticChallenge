@@ -37,9 +37,15 @@ public class Multiplication extends ArithmeticChallenge {
         Random rand = new Random();
         int[] choices = new int[3];
 
-        if (first>second && second>0) {
+        if (first>second && second>1) {
             choices[0] = first / second;
-        }else{ choices[0] = first*second*2;
+
+        }else if (first == 1 || second == 1) {
+            choices[0] = first * second * 5;
+        }else if (first == 11 && second ==1){
+            choices [0] = first + second + 6;
+        }else{
+            choices[0] = first*second*2;
         }
 
         choices[1] = first+second;

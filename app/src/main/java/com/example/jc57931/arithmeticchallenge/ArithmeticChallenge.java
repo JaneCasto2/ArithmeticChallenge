@@ -8,6 +8,11 @@ public abstract class ArithmeticChallenge {
 
     private String mQuestionText;
     private long mStartTime;
+    private long mEndTime;
+    private int cCorrect;
+    private int mHighScore;
+    private int mProgress;
+    private int mCorrectAnswer;
 
     public ArithmeticChallenge(int TOTAL_LEVELS, int TURNS_PER_LEVEL){
         // to be implemented
@@ -25,27 +30,72 @@ public abstract class ArithmeticChallenge {
 
 
     private int first,second;
-
     protected abstract String createQuestion();
-
     protected abstract int[] createChoices();
-
-    protected void setQuestionText (String Question){
+    protected void setQuestionText (String Question)
+    {
         mQuestionText = Question;
     }
-
-    protected String getQuestionText(){
+    protected String getQuestionText()
+    {
         return mQuestionText;
     }
-
-    protected String getChoice (int index){
+    protected String getChoice (int index)
+    {
         return Integer.toString(mChoices[index]);
     }
-
-    protected void setChoices(int[] choices) {
+    protected void setChoices(int[] choices)
+    {
         mChoices = choices;
-        shuffleChoices(choices);
+        mCorrectAnswer = choices[2];
         mStartTime = System.currentTimeMillis();
+        shuffleChoices(choices);
+    }
+
+    protected void setHighScore(int HighScore)
+    {
+        mHighScore = HighScore;
+    }
+
+    protected int getHighScore()
+    {
+        return mHighScore;
+    }
+
+    protected void setScore (boolean isCorrect)
+    {
+        if(isCorrect)
+        {
+            mEndTime = System.currentTimeMillis();
+            cCorrect += 100-(int)mEndTime%(int)mStartTime/1000;
+        }
+        else
+            {
+                cCorrect--;
+            }
+    }
+
+    protected int getScore()
+    {
+        return cCorrect;
+    }
+
+
+    protected void setProgress(boolean isCorrect)
+    {
+       if(isCorrect)
+       {
+           mProgress ++;
+       }
+       else
+       {
+           mProgress--;
+       }
+    }
+
+    protected int getProgress()
+    {
+        return mProgress;
     }
 
     // other getters and setters declared and implemented here
@@ -55,8 +105,7 @@ public abstract class ArithmeticChallenge {
      ******************************************************/
 
     protected boolean isCorrect(int choice){
-        // to be implemented
-        return true;
+        return (mCorrectAnswer == mChoices[choice]);
     }
 
 

@@ -7,13 +7,16 @@
 
     <string name="incorrect">Try again!</string>
     <string name="correct">Great job!</string>
-    <string name="myscore">Your Score: 0</string>
+    <string name="myScore">Your Score: 0</string>
     <string name="highscore">High Score: 1500</string>
     <string name="menu">Menu</string>
     <string name="op1">10</string>
     <string name="op2">16</string>
     <string name="op3">6</string>
     <string name="question">8 * 2</string>
-
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect :(</string>
+    <string name="win_text">You win!</string>
+    <string name="next_button">Next</string>
 
 </resources>
